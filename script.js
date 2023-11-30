@@ -1,9 +1,11 @@
-const submit = document.getElementById('button');
-const url = document.getElementById('url');
+const form = document.getElementById('form');
 
-let location = window.location.search;
-submit.addEventListener('submit', () => {
+form.addEventListener('submit', (event) => {
+    
+    event.preventDefault();
 
-url.innerHTML = location;
-	
+    let url = document.getElementById('url');
+    let query = window.location.search;
+
+    url.innerHTML = `https://localhost:8080/${query}`
 });
